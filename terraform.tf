@@ -87,6 +87,7 @@ resource "azuread_application" "application" {
 }
 
 resource "azuread_service_principal" "enterprise_application" {
+  count                        = var.create_enterprise_application ? 1 : 0
   client_id                    = azuread_application.application.client_id
   app_role_assignment_required = true
 }

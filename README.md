@@ -13,6 +13,7 @@ module "application" {
   application_sign_in_audience  = "AzureADMyOrg"
   redirect_uris                 = ["https://application.example.com/callback"]
   grant_admin_consent           = true
+  create_enterprise_application = true
 }
 ```
 

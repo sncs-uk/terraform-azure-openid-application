@@ -21,3 +21,8 @@ variable "grant_admin_consent" {
   description = "Whether to grant admin consent for the entire organisation."
   default     = false
 }
+variable "create_enterprise_application" {
+  type        = bool
+  description = "Whether or not to create an Enterprise Application object for this application"
+  default     = true
+}
