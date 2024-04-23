@@ -87,12 +87,12 @@ resource "azuread_application" "application" {
 }
 
 resource "azuread_service_principal" "enterprise_application" {
-  application_id                = azuread_application.application.application_id
+  client_id                    = azuread_application.application.client_id
   app_role_assignment_required = true
 }
 
 resource "azuread_application_password" "client_secret" {
-  application_object_id = azuread_application.application.object_id
+  application_id = azuread_application.application.object_id
 }
 
 resource "null_resource" "grant_admin_consent" {
